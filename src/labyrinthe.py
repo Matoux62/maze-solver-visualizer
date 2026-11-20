@@ -1,3 +1,5 @@
+from solver import Solver
+
 class Labyrinthe:
 
     def __init__(self, grille : list[list[str]]):
@@ -11,6 +13,8 @@ class Labyrinthe:
         self.__grille   = grille
         self.__nb_ligne = len(grille)
         self.__nb_col   = len(grille[0])
+
+        self.solver = Solver(grille)
 
     def __test_grille_valide(self, grille):
         if not (isinstance(grille, list) and

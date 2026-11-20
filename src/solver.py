@@ -1,7 +1,7 @@
 class Solver:
 
-    def __init__(self, labyrinthe):
-        self.__labyrinthe = labyrinthe
+    def __init__(self, grille):
+        self.__grille = grille
 
         self.__solving_state = "pending"
         #Valeur possible : "pending" "running" "completed"
