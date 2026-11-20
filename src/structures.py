@@ -40,3 +40,4 @@ class Maillon:
 class ListeChainee:
     def __init__(self):
         self.__tete = None
+        
