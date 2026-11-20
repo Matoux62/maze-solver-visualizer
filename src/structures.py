@@ -14,6 +14,9 @@ class Pile:
     def sommet(self):
         return self.__elements[-1]
 
+    def format_tab(self):
+        return list(self.__elements)
+
 class File:
 
     def __init__(self):

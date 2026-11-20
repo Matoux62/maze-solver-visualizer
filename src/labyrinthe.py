@@ -14,7 +14,7 @@ class Labyrinthe:
         self.__nb_ligne = len(grille)
         self.__nb_col   = len(grille[0])
 
-        self.solver = Solver(grille)
+        self.solver = Solver(self)
 
     def __test_grille_valide(self, grille):
         if not (isinstance(grille, list) and
@@ -67,4 +67,10 @@ class Labyrinthe:
     def est_valide(self, i, j):
         return (0 <= i < self.__nb_ligne) and (0 <= j < self.__nb_col) and (self.__grille[i][j] != '#')
 
-                
+    def voisins(self, i, j):
+        resultat = []
+        for di, dj in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
+            ni, nj = i + di, j + dj
+            if self.est_valide(ni, nj):
+                resultat.append((ni, nj))
+        return resultat
